@@ -11,10 +11,11 @@ function* fibs() {
 }
 //Get a few fibs
 function* evenFibs() {
-  myFibs = fibs();
+  const myFibs = fibs();
+  let peanut;
   while (true) {
     peanut = myFibs.next().value;
-    if (peanut % 2 == 0) {
+    if (peanut % 2 === 0) {
       yield peanut;
     }
   }

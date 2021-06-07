@@ -5,7 +5,7 @@ function* sentence(words) {
   }
 }
 
-mysentence = sentence("hello world");
+const mysentence = sentence("hello world");
 while (true) {
   let word = mysentence.next().value;
   if (word) {
