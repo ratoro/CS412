@@ -3,6 +3,17 @@ html
    head
       title Weather App
    body
+      form(action = "/ps4/promisePost", method = "POST")
+         div
+            label(for = "lat") Latitude:
+            input(name = "lat" value = "37.8267")
+         br
+         div
+            label(for = "long") Longitude:
+            input(name = "long" value = "-122.4233")
+         br
+         button(type = "submit") Let's find out (promise)
+
       form(action = "/ps4/asyncPost", method = "POST")
          div
             label(for = "lat") Latitude:
@@ -12,4 +23,15 @@ html
             label(for = "long") Longitude:
             input(name = "long" value = "-122.4233")
          br
-         button(type = "submit") Let's find out
+         button(type = "submit") Let's find out (async)
+
+      form(action = "/ps4/callbackPost", method = "POST")
+         div
+            label(for = "lat") Latitude:
+            input(name = "lat" value = "37.8267")
+         br
+         div
+            label(for = "long") Longitude:
+            input(name = "long" value = "-122.4233")
+         br
+         button(type = "submit") Let's find out (callbackAsync)

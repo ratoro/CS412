@@ -14,6 +14,12 @@ router.post("/promisePost", function (req, res, next) {
     })
     .then((data) => {
       console.log(data);
+      res.render("results", {
+        timezone: data.timezone,
+        summary: data.currently.summary,
+        humidity: data.currently.humidity,
+        temperature: data.currently.temperature,
+      });
     });
 });
 
@@ -36,8 +42,14 @@ router.post("/callbackPost", function (req, res) {
     if (error) {
       console.error("error:", error);
     }
-    const bodyJSON = JSON.parse(body);
-    console.log(bodyJSON);
+    const data = JSON.parse(body);
+    console.log(data.timezone);
+    res.render("results", {
+      timezone: data.timezone,
+      summary: data.currently.summary,
+      humidity: data.currently.humidity,
+      temperature: data.currently.temperature,
+    });
   });
 });
 
